@@ -1,0 +1,122 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Hesap());
+}
+
+class Hesap extends StatefulWidget {
+  const Hesap({super.key});
+
+  @override
+  State<Hesap> createState() => _HesapState();
+}
+
+class _HesapState extends State<Hesap> {
+  int carpim= 0;
+  int bolum = 0;
+  int fark = 0;
+  int sifirla =0;
+  int sayi1 = 0;
+  int sayi2 = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+          backgroundColor: Colors.blue,
+          appBar: AppBar(
+            title: Text("SKORBORD"),
+          ),
+          body: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.0),
+                      color: Colors.blue),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(color: Colors.blue),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("TEAM NAME"),
+                          Text("TEAM NAME")
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(" $sayi1"),
+                          Text(""),
+
+                          Text("$sayi2"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(height: 20),
+                Container(
+                  decoration: BoxDecoration(color: Colors.blue),
+                ),
+                Row(
+
+                  children: [
+
+                    ElevatedButton(
+                      child: Text("+"),
+                      onPressed: () {
+                        setState(() {
+                          sayi1++;
+                        });
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text("-"),
+                      onPressed: () {
+                        setState(() {
+                          sayi1--;
+                        });
+                      },
+                    ),
+                    Text("                                                                                                                                                                                                                                 "),
+                    ElevatedButton(
+                      child: Text("Sıfırla"),
+                      onPressed: () {
+                        setState(() {
+                          sayi1=0;
+                          sayi2=0;
+                        });
+                      },
+                    ),
+                    Text("                                                                                                                                                                                                                                "),
+                    ElevatedButton(
+                      child: Text("+"),
+                      onPressed: () {
+                        setState(() {
+                          sayi2++;
+                        });
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text("-"),
+                      onPressed: () {
+                        setState(() {
+                          sayi2--;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+
+              ],
+            ),
+          ),
+        ));
+  }
+}
